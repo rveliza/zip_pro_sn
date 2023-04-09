@@ -41,4 +41,22 @@
             End Try
         End Using
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Using z As New Ionic.Zip.ZipFile()
+            Try
+                z.AlternateEncodingUsage = Ionic.Zip.ZipOption.AsNecessary
+                z.AlternateEncoding = System.Text.Encoding.UTF8
+
+                z.Password = "111"
+
+                z.AddDirectory("C:\githubs\VB\ZipFiles")
+
+                z.Save("C:\githubs\VB\ZipFiles\ZippedFiles.zip")
+                'z.Dispose()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Using
+    End Sub
 End Class
