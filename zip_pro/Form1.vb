@@ -2,10 +2,11 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Using z As New Ionic.Zip.ZipFile()
             Try
-                'z.AddFile("C:\githubs\VB\ZipFiles\lowpass.jpg")
+                z.AlternateEncodingUsage = Ionic.Zip.ZipOption.AsNecessary
+                z.AlternateEncoding = System.Text.Encoding.UTF8
 
-                'Custom Folder Name
-                'z.AddFile("C:\githubs\VB\ZipFiles\lowpass.jpg", "My_Zips")
+                z.Password = "111"
+
                 z.AddFile("C:\githubs\VB\ZipFiles\lowpass.jpg", "images")
                 z.AddFile("C:\githubs\VB\ZipFiles\fltplan.pdf", "aviation")
                 z.AddFile("C:\githubs\VB\ZipFiles\jet.xls", "aviation")
