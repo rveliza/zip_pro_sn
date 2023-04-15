@@ -50,7 +50,7 @@
 
                 z.Password = "111"
 
-                z.AddDirectory("C:\githubs\VB\ZipFiles")
+                z.AddDirectory("C:\githubs\VB\ZipFiles", "Docs\Private")
 
                 z.Save("C:\githubs\VB\ZipFiles\ZippedFiles.zip")
                 'z.Dispose()
