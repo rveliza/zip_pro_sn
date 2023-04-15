@@ -23,7 +23,7 @@ Partial Class Backup_Form
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.file_path_TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -35,6 +35,7 @@ Partial Class Backup_Form
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ProgressBar2 = New System.Windows.Forms.ProgressBar()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -42,7 +43,7 @@ Partial Class Backup_Form
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Panel1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.file_path_TextBox1)
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
@@ -53,13 +54,14 @@ Partial Class Backup_Form
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Info"
         '
-        'TextBox1
+        'file_path_TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(180, 27)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(291, 27)
-        Me.TextBox1.TabIndex = 3
+        Me.file_path_TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.file_path_TextBox1.Location = New System.Drawing.Point(180, 27)
+        Me.file_path_TextBox1.Name = "file_path_TextBox1"
+        Me.file_path_TextBox1.ReadOnly = True
+        Me.file_path_TextBox1.Size = New System.Drawing.Size(291, 22)
+        Me.file_path_TextBox1.TabIndex = 3
         '
         'Button3
         '
@@ -100,9 +102,9 @@ Partial Class Backup_Form
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(168, 37)
+        Me.Panel1.Location = New System.Drawing.Point(126, 26)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(302, 139)
+        Me.Panel1.Size = New System.Drawing.Size(303, 139)
         Me.Panel1.TabIndex = 0
         Me.Panel1.Visible = False
         '
@@ -191,7 +193,7 @@ Partial Class Backup_Form
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents file_path_TextBox1 As TextBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
@@ -203,4 +205,5 @@ Partial Class Backup_Form
     Friend WithEvents Label1 As Label
     Friend WithEvents ProgressBar2 As ProgressBar
     Friend WithEvents Label4 As Label
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
 End Class
