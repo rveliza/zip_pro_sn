@@ -13,6 +13,11 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Using z As New Ionic.Zip.ZipFile()
+
+            If Me.file_path_TextBox1.Text = "" Then
+                MessageBox.Show("Please select backup folder!")
+                Exit Sub
+            End If
             Try
                 z.AlternateEncodingUsage = Ionic.Zip.ZipOption.AsNecessary
                 z.AlternateEncoding = System.Text.Encoding.UTF8
@@ -28,7 +33,7 @@
                 z.AddFile(fn + "\data\image\2.jpg", "data\image")
                 z.AddFile(fn + "\data\image\3.jpg", "data\image")
                 z.AddFile(fn + "\data\image\4.png", "data\image")
-                z.Save(Me.file_path_TextBox1.Text)
+                z.Save(Me.file_path_TextBox1.Text + ".zip")
 
                 Dim fi As New System.IO.FileInfo(Me.file_path_TextBox1.Text)
                 Dim fs As Long
