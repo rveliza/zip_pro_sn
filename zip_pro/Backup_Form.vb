@@ -18,13 +18,16 @@
                 z.AlternateEncoding = System.Text.Encoding.UTF8
                 z.Password = "111"
 
-                z.AddFile("C:\Users\reyne\source\repos\Collections\zip_pro_sn\zip_pro\data\Shop_db.mbn", "data")
-                z.AddFile("C:\Users\reyne\source\repos\Collections\zip_pro_sn\zip_pro\data\Audio\maryfisher1992.mp3", "data\Audio")
-                z.AddFile("C:\Users\reyne\source\repos\Collections\zip_pro_sn\zip_pro\bin\Debug\data\Audio\xxx1.mp3", "data\Audio")
-                z.AddFile("C:\Users\reyne\source\repos\Collections\zip_pro_sn\zip_pro\bin\Debug\data\image\1.jpg", "data\image")
-                z.AddFile("C:\Users\reyne\source\repos\Collections\zip_pro_sn\zip_pro\bin\Debug\data\image\2.jpg", "data\image")
-                z.AddFile("C:\Users\reyne\source\repos\Collections\zip_pro_sn\zip_pro\bin\Debug\data\image\3.jpg", "data\image")
-                z.AddFile("C:\Users\reyne\source\repos\Collections\zip_pro_sn\zip_pro\bin\Debug\data\image\4.png", "data\image")
+                Dim fn As String
+                fn = Application.StartupPath
+
+                z.AddFile(fn + "\data\Shop_db.mbn", "data")
+                z.AddFile(fn + "\data\Audio\maryfisher1992.mp3", "data\Audio")
+                z.AddFile(fn + "\data\Audio\xxx1.mp3", "data\Audio")
+                z.AddFile(fn + "\data\image\1.jpg", "data\image")
+                z.AddFile(fn + "\data\image\2.jpg", "data\image")
+                z.AddFile(fn + "\data\image\3.jpg", "data\image")
+                z.AddFile(fn + "\data\image\4.png", "data\image")
                 z.Save(Me.file_path_TextBox1.Text + ".zip")
                 'z.Dispose()
             Catch ex As Exception
