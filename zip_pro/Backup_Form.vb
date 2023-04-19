@@ -18,6 +18,13 @@
                 MessageBox.Show("Please select backup folder!")
                 Exit Sub
             End If
+
+            Me.sub_ProgressBar1.Value = 0
+            Me.main_ProgressBar2.Value = 0
+            Me.sub_Label3.Text = "0"
+            Me.main_Label4.Text = "0"
+            Me.prog_Panel1.Visible = True
+            Me.prog_Panel1.Refresh()
             Try
                 z.AlternateEncodingUsage = Ionic.Zip.ZipOption.AsNecessary
                 z.AlternateEncoding = System.Text.Encoding.UTF8
@@ -35,10 +42,11 @@
                 z.AddFile(fn + "\data\image\4.png", "data\image")
                 z.Save(Me.file_path_TextBox1.Text + ".zip")
 
-                Dim fi As New System.IO.FileInfo(Me.file_path_TextBox1.Text)
+                Dim fi As New System.IO.FileInfo(Me.file_path_TextBox1.Text + ".zip")
                 Dim fs As Long
                 fs = fi.Length
 
+                Me.prog_Panel1.Visible = False
                 If fs = 0 Then
                     MessageBox.Show("Backup failed")
                 Else
@@ -50,6 +58,7 @@
 
 
             Catch ex As Exception
+                Me.prog_Panel1.Visible = False
                 MessageBox.Show(ex.Message)
             End Try
         End Using
