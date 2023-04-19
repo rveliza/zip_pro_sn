@@ -7,7 +7,7 @@
         If fn = "" Then
             Exit Sub
         End If
-        file_name = System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm")
+        file_name = System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm" + ".z19")
         Me.file_path_TextBox1.Text = fn + "\" + file_name
     End Sub
 
@@ -28,8 +28,22 @@
                 z.AddFile(fn + "\data\image\2.jpg", "data\image")
                 z.AddFile(fn + "\data\image\3.jpg", "data\image")
                 z.AddFile(fn + "\data\image\4.png", "data\image")
-                z.Save(Me.file_path_TextBox1.Text + ".zip")
-                'z.Dispose()
+                z.Save(Me.file_path_TextBox1.Text)
+
+                Dim fi As New System.IO.FileInfo(Me.file_path_TextBox1.Text)
+                Dim fs As Long
+                fs = fi.Length
+
+                If fs = 0 Then
+                    MessageBox.Show("Backup failed")
+                Else
+                    Dim fs_kb As Long
+                    fs_kb = fs \ 1024 'file size in KB
+                    MessageBox.Show("Backup is done!  File size is: " + fs_kb.ToString + " KB")
+                End If
+
+
+
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
