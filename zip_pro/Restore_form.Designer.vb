@@ -144,6 +144,7 @@ Partial Class Restore_form
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.OpenFileDialog1.Filter = "Zip FIles | *.zip"
         '
         'Restore_form
         '
