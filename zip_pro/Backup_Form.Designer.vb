@@ -29,7 +29,7 @@ Partial Class Backup_Form
         Me.sub_Label3 = New System.Windows.Forms.Label()
         Me.sub_ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.prog_Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.file_path_TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -63,7 +63,7 @@ Partial Class Backup_Form
         Me.prog_Panel1.Controls.Add(Me.sub_Label3)
         Me.prog_Panel1.Controls.Add(Me.sub_ProgressBar1)
         Me.prog_Panel1.Controls.Add(Me.Panel2)
-        Me.prog_Panel1.Controls.Add(Me.Label2)
+        Me.prog_Panel1.Controls.Add(Me.prog_Label2)
         Me.prog_Panel1.Controls.Add(Me.Label1)
         Me.prog_Panel1.Location = New System.Drawing.Point(126, 26)
         Me.prog_Panel1.Name = "prog_Panel1"
@@ -111,16 +111,16 @@ Partial Class Backup_Form
         Me.Panel2.Size = New System.Drawing.Size(305, 1)
         Me.Panel2.TabIndex = 2
         '
-        'Label2
+        'prog_Label2
         '
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Green
-        Me.Label2.Location = New System.Drawing.Point(23, 26)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(255, 22)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Backup in Progress"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.prog_Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.prog_Label2.ForeColor = System.Drawing.Color.Green
+        Me.prog_Label2.Location = New System.Drawing.Point(23, 26)
+        Me.prog_Label2.Name = "prog_Label2"
+        Me.prog_Label2.Size = New System.Drawing.Size(255, 22)
+        Me.prog_Label2.TabIndex = 1
+        Me.prog_Label2.Text = "Backup in Progress"
+        Me.prog_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
         '
@@ -201,7 +201,7 @@ Partial Class Backup_Form
     Friend WithEvents sub_Label3 As Label
     Friend WithEvents sub_ProgressBar1 As ProgressBar
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
+    Friend WithEvents prog_Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents main_ProgressBar2 As ProgressBar
     Friend WithEvents main_Label4 As Label

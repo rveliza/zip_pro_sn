@@ -22,7 +22,12 @@
     Sub progress_validator(main_curr_item As Integer, main_total_items_count As Integer)
         Me.main_ProgressBar2.Value = percentage_cal(main_curr_item, main_total_items_count)
         Me.main_ProgressBar2.Refresh()
-        System.Threading.Thread.Sleep(300)
+
+        Me.main_Label4.Text = Me.main_ProgressBar2.Value.ToString + "+"
+        Me.main_Label4.Refresh()
+        Me.main_Label4.Refresh()
+
+        System.Threading.Thread.Sleep(200)
 
     End Sub
 
@@ -67,9 +72,14 @@
                 progress_validator(6, 7)
 
                 z.AddFile(fn + "\data\image\4.png", "data\image")
+
+                Me.prog_Label2.Text = "Saving backup..."
+                Me.prog_Label2.Refresh()
+                z.Save(Me.file_path_TextBox1.Text + ".zip")
+
                 progress_validator(7, 7)
 
-                z.Save(Me.file_path_TextBox1.Text + ".zip")
+
 
                 Dim fi As New System.IO.FileInfo(Me.file_path_TextBox1.Text + ".zip")
                 Dim fs As Long
