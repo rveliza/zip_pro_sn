@@ -19,6 +19,13 @@
         Return rv
     End Function
 
+    Sub progress_validator(main_curr_item As Integer, main_total_items_count As Integer)
+        Me.main_ProgressBar2.Value = percentage_cal(main_curr_item, main_total_items_count)
+        Me.main_ProgressBar2.Refresh()
+        System.Threading.Thread.Sleep(300)
+
+    End Sub
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Using z As New Ionic.Zip.ZipFile()
 
@@ -42,12 +49,26 @@
                 fn = Application.StartupPath
 
                 z.AddFile(fn + "\data\Shop_db.mbn", "data")
+                progress_validator(1, 7)
+
                 z.AddFile(fn + "\data\Audio\maryfisher1992.mp3", "data\Audio")
+                progress_validator(2, 7)
+
                 z.AddFile(fn + "\data\Audio\xxx1.mp3", "data\Audio")
+                progress_validator(3, 7)
+
                 z.AddFile(fn + "\data\image\1.jpg", "data\image")
+                progress_validator(4, 7)
+
                 z.AddFile(fn + "\data\image\2.jpg", "data\image")
+                progress_validator(5, 7)
+
                 z.AddFile(fn + "\data\image\3.jpg", "data\image")
+                progress_validator(6, 7)
+
                 z.AddFile(fn + "\data\image\4.png", "data\image")
+                progress_validator(7, 7)
+
                 z.Save(Me.file_path_TextBox1.Text + ".zip")
 
                 Dim fi As New System.IO.FileInfo(Me.file_path_TextBox1.Text + ".zip")
