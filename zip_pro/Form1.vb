@@ -59,4 +59,20 @@
             End Try
         End Using
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim fn As String
+        fn = "C:\Users\reyne\OneDrive\Desktop\19-04-2023-23-29.zip"
+        Using z As New Ionic.Zip.ZipFile(fn)
+            Try
+                z.AlternateEncodingUsage = Ionic.Zip.ZipOption.AsNecessary
+                z.AlternateEncoding = System.Text.Encoding.UTF8
+                z.Password = "111"
+
+                z.ExtractAll("C:\Users\reyne\OneDrive\Desktop\outputZips")
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Using
+    End Sub
 End Class

@@ -7,7 +7,7 @@
         If fn = "" Then
             Exit Sub
         End If
-        file_name = System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm" + ".z19")
+        file_name = System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm")
         Me.file_path_TextBox1.Text = fn + "\" + file_name
     End Sub
 
