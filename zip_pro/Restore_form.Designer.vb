@@ -25,13 +25,14 @@ Partial Class Restore_form
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Browse_Button1 = New System.Windows.Forms.Button()
-        Me.Start_Button2 = New System.Windows.Forms.Button()
-        Me.Help_Button3 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.prog_Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.path_TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Help_Button3 = New System.Windows.Forms.Button()
+        Me.Start_Button2 = New System.Windows.Forms.Button()
+        Me.Browse_Button1 = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.prog_Panel2.SuspendLayout()
@@ -60,7 +61,7 @@ Partial Class Restore_form
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.prog_Panel2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.path_TextBox1)
         Me.GroupBox1.Controls.Add(Me.Help_Button3)
         Me.GroupBox1.Controls.Add(Me.Start_Button2)
         Me.GroupBox1.Controls.Add(Me.Browse_Button1)
@@ -70,41 +71,6 @@ Partial Class Restore_form
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Info"
-        '
-        'Browse_Button1
-        '
-        Me.Browse_Button1.Location = New System.Drawing.Point(35, 48)
-        Me.Browse_Button1.Name = "Browse_Button1"
-        Me.Browse_Button1.Size = New System.Drawing.Size(116, 37)
-        Me.Browse_Button1.TabIndex = 0
-        Me.Browse_Button1.Text = "Select Backup"
-        Me.Browse_Button1.UseVisualStyleBackColor = True
-        '
-        'Start_Button2
-        '
-        Me.Start_Button2.Location = New System.Drawing.Point(35, 95)
-        Me.Start_Button2.Name = "Start_Button2"
-        Me.Start_Button2.Size = New System.Drawing.Size(116, 37)
-        Me.Start_Button2.TabIndex = 1
-        Me.Start_Button2.Text = "Start"
-        Me.Start_Button2.UseVisualStyleBackColor = True
-        '
-        'Help_Button3
-        '
-        Me.Help_Button3.Location = New System.Drawing.Point(855, 149)
-        Me.Help_Button3.Name = "Help_Button3"
-        Me.Help_Button3.Size = New System.Drawing.Size(75, 47)
-        Me.Help_Button3.TabIndex = 2
-        Me.Help_Button3.Text = "Help"
-        Me.Help_Button3.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(163, 54)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(767, 24)
-        Me.TextBox1.TabIndex = 3
         '
         'prog_Panel2
         '
@@ -118,6 +84,17 @@ Partial Class Restore_form
         Me.prog_Panel2.TabIndex = 4
         Me.prog_Panel2.Visible = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.ForestGreen
+        Me.Label3.Location = New System.Drawing.Point(88, 79)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(155, 18)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Restoring backup..."
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -129,16 +106,44 @@ Partial Class Restore_form
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Please wait!"
         '
-        'Label3
+        'path_TextBox1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.ForestGreen
-        Me.Label3.Location = New System.Drawing.Point(88, 79)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(155, 18)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Restoring backup..."
+        Me.path_TextBox1.Location = New System.Drawing.Point(163, 54)
+        Me.path_TextBox1.Name = "path_TextBox1"
+        Me.path_TextBox1.ReadOnly = True
+        Me.path_TextBox1.Size = New System.Drawing.Size(767, 24)
+        Me.path_TextBox1.TabIndex = 3
+        '
+        'Help_Button3
+        '
+        Me.Help_Button3.Location = New System.Drawing.Point(855, 149)
+        Me.Help_Button3.Name = "Help_Button3"
+        Me.Help_Button3.Size = New System.Drawing.Size(75, 47)
+        Me.Help_Button3.TabIndex = 2
+        Me.Help_Button3.Text = "Help"
+        Me.Help_Button3.UseVisualStyleBackColor = True
+        '
+        'Start_Button2
+        '
+        Me.Start_Button2.Location = New System.Drawing.Point(35, 95)
+        Me.Start_Button2.Name = "Start_Button2"
+        Me.Start_Button2.Size = New System.Drawing.Size(116, 37)
+        Me.Start_Button2.TabIndex = 1
+        Me.Start_Button2.Text = "Start"
+        Me.Start_Button2.UseVisualStyleBackColor = True
+        '
+        'Browse_Button1
+        '
+        Me.Browse_Button1.Location = New System.Drawing.Point(35, 48)
+        Me.Browse_Button1.Name = "Browse_Button1"
+        Me.Browse_Button1.Size = New System.Drawing.Size(116, 37)
+        Me.Browse_Button1.TabIndex = 0
+        Me.Browse_Button1.Text = "Select Backup"
+        Me.Browse_Button1.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'Restore_form
         '
@@ -172,8 +177,9 @@ Partial Class Restore_form
     Friend WithEvents prog_Panel2 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents path_TextBox1 As TextBox
     Friend WithEvents Help_Button3 As Button
     Friend WithEvents Start_Button2 As Button
     Friend WithEvents Browse_Button1 As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
