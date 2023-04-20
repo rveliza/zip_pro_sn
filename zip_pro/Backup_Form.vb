@@ -19,14 +19,20 @@
         Return rv
     End Function
 
-    Sub progress_validator(main_curr_item As Integer, main_total_items_count As Integer)
+    Sub progress_validator(main_curr_item As Integer, main_total_items_count As Integer, sub_curr_item As Integer, sub_total_items_count As Integer)
+        '---------------------------------------------------------------------
         Me.main_ProgressBar2.Value = percentage_cal(main_curr_item, main_total_items_count)
         Me.main_ProgressBar2.Refresh()
 
         Me.main_Label4.Text = Me.main_ProgressBar2.Value.ToString + "+"
         Me.main_Label4.Refresh()
-        Me.main_Label4.Refresh()
+        '-----------------------------------------------------------------------
+        Me.sub_ProgressBar1.Value = percentage_cal(sub_curr_item, sub_total_items_count)
+        Me.sub_Label3.Refresh()
 
+        Me.sub_Label3.Text = Me.sub_ProgressBar1.Value.ToString + "+"
+        Me.sub_Label3.Refresh()
+        '--------------------------------------------------------------
         System.Threading.Thread.Sleep(200)
 
     End Sub
@@ -54,22 +60,22 @@
                 fn = Application.StartupPath
 
                 z.AddFile(fn + "\data\Shop_db.mbn", "data")
-                progress_validator(1, 7)
+                progress_validator(1, 7, 1, 1)
 
                 z.AddFile(fn + "\data\Audio\maryfisher1992.mp3", "data\Audio")
-                progress_validator(2, 7)
+                progress_validator(2, 7, 1, 2)
 
                 z.AddFile(fn + "\data\Audio\xxx1.mp3", "data\Audio")
-                progress_validator(3, 7)
+                progress_validator(3, 7, 2, 2)
 
                 z.AddFile(fn + "\data\image\1.jpg", "data\image")
-                progress_validator(4, 7)
+                progress_validator(4, 7, 1, 4)
 
                 z.AddFile(fn + "\data\image\2.jpg", "data\image")
-                progress_validator(5, 7)
+                progress_validator(5, 7, 2, 4)
 
                 z.AddFile(fn + "\data\image\3.jpg", "data\image")
-                progress_validator(6, 7)
+                progress_validator(6, 7, 3, 4)
 
                 z.AddFile(fn + "\data\image\4.png", "data\image")
 
@@ -77,7 +83,7 @@
                 Me.prog_Label2.Refresh()
                 z.Save(Me.file_path_TextBox1.Text + ".zip")
 
-                progress_validator(7, 7)
+                progress_validator(7, 7, 4, 4)
 
 
 
