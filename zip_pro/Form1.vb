@@ -69,7 +69,7 @@
                 z.AlternateEncoding = System.Text.Encoding.UTF8
                 z.Password = "111"
 
-                z.ExtractAll("C:\Users\reyne\OneDrive\Desktop\outputZips")
+                z.ExtractAll("C:\Users\reyne\OneDrive\Desktop\outputZips", Ionic.Zip.ExtractExistingFileAction.OverwriteSilently)
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
