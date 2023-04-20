@@ -11,6 +11,14 @@
         Me.file_path_TextBox1.Text = fn + "\" + file_name
     End Sub
 
+    Function percentage_cal(curr_item As Int32, total_items As Int32) As Int32
+        Dim p_double As Double
+        Dim rv As Int32
+        p_double = (curr_item / total_items) * 100
+        rv = CType(p_double, Int32)
+        Return rv
+    End Function
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Using z As New Ionic.Zip.ZipFile()
 
@@ -62,5 +70,9 @@
                 MessageBox.Show(ex.Message)
             End Try
         End Using
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Text = percentage_cal(35, 70)
     End Sub
 End Class
