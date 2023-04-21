@@ -11,4 +11,21 @@
         Me.path_TextBox1.Text = fn
     End Sub
 
+    Private Sub Start_Button2_Click(sender As Object, e As EventArgs) Handles Start_Button2.Click
+        Dim fn As String
+        fn = Me.path_TextBox1.Text
+        Using z As New Ionic.Zip.ZipFile(fn)
+            Try
+                z.AlternateEncodingUsage = Ionic.Zip.ZipOption.AsNecessary
+                z.AlternateEncoding = System.Text.Encoding.UTF8
+                z.Password = "111"
+
+                Dim df As String
+                df = Application.StartupPath
+                z.ExtractAll(df, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Using
+    End Sub
 End Class
