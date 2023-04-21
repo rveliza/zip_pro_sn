@@ -17,6 +17,9 @@
             Exit Sub
         End If
 
+        Me.prog_Panel2.Visible = True
+        Me.prog_Panel2.Refresh()
+
         Dim fn As String
         fn = Me.path_TextBox1.Text
         Using z As New Ionic.Zip.ZipFile(fn)
@@ -29,8 +32,10 @@
                 df = Application.StartupPath
                 z.ExtractAll(df, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently)
 
+                Me.prog_Panel2.Visible = False
                 MessageBox.Show("Restoration is done! Pleae check your data!")
             Catch ex As Exception
+                Me.prog_Panel2.Visible = False
                 MessageBox.Show(ex.Message)
             End Try
         End Using
